@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-// Counter bileşeni
+// Counter component
 class Counter extends Component {
   render() {
     return (
@@ -14,7 +14,7 @@ class Counter extends Component {
 
 // Redux store'dan veriyi almak için mapStateToProps fonksiyonu
 function mapStateToProps(state) {
-  return { counter: state.counterReducer }; // Redux store'undaki counterReducer'ı 'counter' olarak bağlıyoruz
+  return { counter: state.counter };  // Redux store'undaki 'counter' state'ini 'counter' olarak bağlıyoruz
 }
 
 // connect ile Redux store'u ile Counter bileşenini bağla

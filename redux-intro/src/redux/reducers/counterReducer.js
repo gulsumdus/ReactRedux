@@ -1,15 +1,19 @@
 import * as actionTypes from "../actions/actionTypes";
 
-const counterReducer = (state = 0, action) => {
-    switch (action.type) {  // Removed the extra space here
+
+const counterReducer = (state = 0, action = {}) => {
+    if (!action || !action.type) {
+        return state;  // Prevent breaking on undefined action
+    }
+    switch (action.type) {
         case actionTypes.INCREASE_COUNTER:
-            return state + action.payload;  // Directly return the new state
+            return state = state + action.payload;
         case actionTypes.DECREASE_COUNTER:
-            return state - action.payload;  // Directly return the new state
+            return state = state - action.payload;
         case actionTypes.INCREASE_BY_TWO_COUNTER:
-            return state + action.payload;  // Directly return the new state
+            return state = state + action.payload;
         default:
-            return state;  // Return current state if action type doesn't match
+            return state;
     }
 };
 

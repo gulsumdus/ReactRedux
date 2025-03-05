@@ -1,7 +1,11 @@
-import {combineReducers} from "redux";
-import counterReducer from "./counterReducer";
+// redux/reducers/configureStore.js
+import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from './counterReducer'; // Your reducer file
 
-const reducers = combineReducers({
-    counterReducer
+const store = configureStore({
+  reducer: {
+    counter: counterReducer,  // Ensure you're correctly assigning reducers
+  },
 });
-export default reducers;
+
+export default store;
